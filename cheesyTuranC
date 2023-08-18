@@ -1,0 +1,274 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local gui = Instance.new("ScreenGui")
+local main = Instance.new("Frame")
+local title = Instance.new("TextLabel")
+local real = Instance.new("ScrollingFrame")
+local corner = Instance.new("UICorner")
+local source = Instance.new("TextBox")
+local execute = Instance.new("TextButton")
+local title_2 = Instance.new("TextLabel")
+local attach = Instance.new("TextButton")
+local clear = Instance.new("TextButton")
+local status = Instance.new("TextLabel")
+local close = Instance.new("TextButton")
+
+local injected = false
+
+--Properties:
+
+gui.Name = "gui"
+gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+gui.ResetOnSpawn = false
+
+main.Name = "main"
+main.Parent = gui
+main.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
+main.BorderColor3 = Color3.fromRGB(0, 0, 0)
+main.BorderSizePixel = 0
+main.Position = UDim2.new(0.187182739, 0, 0.134567901, 0)
+main.Size = UDim2.new(0, 576, 0, 281)
+
+title.Name = "title"
+title.Parent = main
+title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+title.BackgroundTransparency = 1.000
+title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+title.BorderSizePixel = 0
+title.Position = UDim2.new(0.289930552, 0, 0, 0)
+title.Size = UDim2.new(0, 242, 0, 56)
+title.Font = Enum.Font.FredokaOne
+title.Text = "CHEESY TURANC"
+title.TextColor3 = Color3.fromRGB(255, 198, 28)
+title.TextScaled = true
+title.TextSize = 14.000
+title.TextWrapped = true
+
+real.Name = "real"
+real.Parent = main
+real.Active = true
+real.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+real.BackgroundTransparency = 1.000
+real.BorderColor3 = Color3.fromRGB(0, 0, 0)
+real.BorderSizePixel = 0
+real.Position = UDim2.new(0.03125, 0, 0.199288249, 0)
+real.Size = UDim2.new(0, 391, 0, 180)
+real.BottomImage = "rbxassetid://148970562"
+real.CanvasSize = UDim2.new(0, 0, 30, 0)
+real.MidImage = "rbxassetid://148970562"
+real.TopImage = "rbxassetid://148970562"
+
+corner.CornerRadius = UDim.new(0.100000001, 9)
+corner.Name = "corner"
+corner.Parent = real
+
+source.Name = "source"
+source.Parent = real
+source.BackgroundColor3 = Color3.fromRGB(72, 72, 72)
+source.BorderColor3 = Color3.fromRGB(0, 0, 0)
+source.BorderSizePixel = 0
+source.Size = UDim2.new(1, 0, 0.5, 0)
+source.ClearTextOnFocus = false
+source.Font = Enum.Font.SourceSans
+source.MultiLine = true
+source.Text = ""
+source.TextColor3 = Color3.fromRGB(255, 198, 28)
+source.TextSize = 14.000
+source.TextXAlignment = Enum.TextXAlignment.Left
+source.TextYAlignment = Enum.TextYAlignment.Top
+
+execute.Name = "execute"
+execute.Parent = main
+execute.BackgroundColor3 = Color3.fromRGB(255, 198, 28)
+execute.BorderColor3 = Color3.fromRGB(0, 0, 0)
+execute.BorderSizePixel = 0
+execute.Position = UDim2.new(0.03125, 0, 0.868327379, 0)
+execute.Size = UDim2.new(0, 112, 0, 31)
+execute.Font = Enum.Font.SourceSans
+execute.Text = "EXECUTE"
+execute.TextColor3 = Color3.fromRGB(0, 0, 0)
+execute.TextScaled = true
+execute.TextSize = 14.000
+execute.TextWrapped = true
+
+title_2.Name = "title_2"
+title_2.Parent = main
+title_2.BackgroundColor3 = Color3.fromRGB(72, 72, 72)
+title_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+title_2.BorderSizePixel = 0
+title_2.Position = UDim2.new(0.729166687, 0, 0.199288249, 0)
+title_2.Size = UDim2.new(0, 144, 0, 179)
+title_2.Font = Enum.Font.SourceSans
+title_2.Text = "Big thank for you!"
+title_2.TextColor3 = Color3.fromRGB(255, 198, 28)
+title_2.TextSize = 14.000
+title_2.TextXAlignment = Enum.TextXAlignment.Left
+title_2.TextYAlignment = Enum.TextYAlignment.Top
+
+attach.Name = "attach"
+attach.Parent = main
+attach.BackgroundColor3 = Color3.fromRGB(255, 198, 28)
+attach.BorderColor3 = Color3.fromRGB(0, 0, 0)
+attach.BorderSizePixel = 0
+attach.Position = UDim2.new(0.784722209, 0, 0.868327379, 0)
+attach.Size = UDim2.new(0, 112, 0, 31)
+attach.Font = Enum.Font.SourceSans
+attach.Text = "INJECT"
+attach.TextColor3 = Color3.fromRGB(0, 0, 0)
+attach.TextScaled = true
+attach.TextSize = 14.000
+attach.TextWrapped = true
+
+clear.Name = "clear"
+clear.Parent = main
+clear.BackgroundColor3 = Color3.fromRGB(255, 198, 28)
+clear.BorderColor3 = Color3.fromRGB(0, 0, 0)
+clear.BorderSizePixel = 0
+clear.Position = UDim2.new(0.244791672, 0, 0.868327379, 0)
+clear.Size = UDim2.new(0, 112, 0, 31)
+clear.Font = Enum.Font.SourceSans
+clear.Text = "CLEAR"
+clear.TextColor3 = Color3.fromRGB(0, 0, 0)
+clear.TextScaled = true
+clear.TextSize = 14.000
+clear.TextWrapped = true
+
+status.Name = "status"
+status.Parent = main
+status.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+status.BackgroundTransparency = 1.000
+status.BorderColor3 = Color3.fromRGB(0, 0, 0)
+status.BorderSizePixel = 0
+status.Position = UDim2.new(0.303819448, 0, 0.153024912, 0)
+status.Size = UDim2.new(0, 222, 0, 10)
+status.Font = Enum.Font.SourceSans
+status.Text = "[status : not injected]"
+status.TextColor3 = Color3.fromRGB(255, 198, 28)
+status.TextSize = 16.000
+status.TextWrapped = true
+status.TextYAlignment = Enum.TextYAlignment.Bottom
+
+close.Name = "close"
+close.Parent = main
+close.BackgroundColor3 = Color3.fromRGB(255, 198, 28)
+close.BorderColor3 = Color3.fromRGB(0, 0, 0)
+close.BorderSizePixel = 0
+close.Position = UDim2.new(0.946180582, 0, 0, 0)
+close.Size = UDim2.new(0, 30, 0, 31)
+close.Font = Enum.Font.SourceSans
+close.Text = "X"
+close.TextColor3 = Color3.fromRGB(0, 0, 0)
+close.TextScaled = true
+close.TextSize = 14.000
+close.TextWrapped = true
+
+-- Scripts:
+
+local function HLADN_fake_script() -- execute.EXECUTE_ 
+	local script = Instance.new('LocalScript', execute)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		local v = script.Parent.Parent.real.source
+		local s = script.Parent.Parent.status
+		if injected == true then
+			loadstring(v.Text)()
+		elseif injected == false then
+			s.Text = "[haven't injected]"
+			wait(0.5)
+			s.Text = "[status : not injected]"
+		end
+	end)
+end
+coroutine.wrap(HLADN_fake_script)()
+local function BWVJTZD_fake_script() -- attach.ATTACH_ 
+	local script = Instance.new('LocalScript', attach)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		print("GG")
+		if injected == true then
+			script.Parent.Parent.status.Text = "[already inject]"
+			wait(1)
+			script.Parent.Parent.status.Text = "[status : injected]"
+		end
+		if injected == false then
+			script.Parent.Parent.status.Text = "[checking..]"
+			wait(0.1)
+			script.Parent.Parent.status.Text = "[programming..]"
+			wait(1.5)
+			script.Parent.Parent.status.Text = "[checking whitelist..]"
+			wait(0.8)
+			script.Parent.Parent.status.Text = "[scanning..]"
+			wait(0.3)
+			script.Parent.Parent.status.Text = "[injected!]"
+			wait(0.5)
+			script.Parent.Parent.status.Text = "[status : injected]"
+		end
+	end)
+end
+coroutine.wrap(BWVJTZD_fake_script)()
+local function JQNBOGU_fake_script() -- clear.CLEAR_ 
+	local script = Instance.new('LocalScript', clear)
+
+	local v = script.Parent.Parent.real.source
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		v.Text = ""
+	end)
+end
+coroutine.wrap(JQNBOGU_fake_script)()
+local function DTLTL_fake_script() -- close.close._ 
+	local script = Instance.new('LocalScript', close)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent:Destroy()
+	end)
+end
+coroutine.wrap(DTLTL_fake_script)()
+local function SPQVH_fake_script() -- main.drag._ 
+	local script = Instance.new('LocalScript', main)
+
+	local UserInputService = game:GetService("UserInputService")
+	
+	local gui = script.Parent
+	
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	
+	local function update(input)
+		local delta = input.Position - dragStart
+		gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+	end
+	
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+	
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	
+	UserInputService.InputChanged:Connect(function(input)
+		if input == dragInput and dragging then
+			update(input)
+		end
+	end)
+end
+coroutine.wrap(SPQVH_fake_script)()
