@@ -206,6 +206,7 @@ local function BWVJTZD_fake_script() -- attach.ATTACH_
 			script.Parent.Parent.status.Text = "[injected!]"
 			wait(0.5)
 			script.Parent.Parent.status.Text = "[status : injected]"
+			injected = true
 		end
 	end)
 end
