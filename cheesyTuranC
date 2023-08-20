@@ -1,7 +1,9 @@
--- Gui to Lua
--- Version: 3.2
-
--- Instances:
+-- TuranC.Version : {
+	0.12 -- làm xong cái gui, script.
+	0.13 -- thêm intro.
+	0.14 -- thêm outro.
+	ALL MADE BY TURANC!
+}
 
 local gui = Instance.new("ScreenGui")
 local main = Instance.new("Frame")
@@ -15,6 +17,7 @@ local attach = Instance.new("TextButton")
 local clear = Instance.new("TextButton")
 local status = Instance.new("TextLabel")
 local close = Instance.new("TextButton")
+local ImageLabel = Instance.new("ImageLabel")
 
 local injected = false
 --Properties:
@@ -29,8 +32,8 @@ main.Parent = gui
 main.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
 main.BorderColor3 = Color3.fromRGB(0, 0, 0)
 main.BorderSizePixel = 0
-main.Position = UDim2.new(0.187182739, 0, 0.134567901, 0)
-main.Size = UDim2.new(0, 576, 0, 281)
+main.Position = UDim2.new(0.419848382, 0, 0.377777785, 0)
+main.Size = UDim2.new(0, 100, 0, 100)
 
 title.Name = "title"
 title.Parent = main
@@ -40,6 +43,7 @@ title.BorderColor3 = Color3.fromRGB(0, 0, 0)
 title.BorderSizePixel = 0
 title.Position = UDim2.new(0.289930552, 0, 0, 0)
 title.Size = UDim2.new(0, 242, 0, 56)
+title.Visible = false
 title.Font = Enum.Font.FredokaOne
 title.Text = "CHEESY TURANC"
 title.TextColor3 = Color3.fromRGB(255, 198, 28)
@@ -56,6 +60,7 @@ real.BorderColor3 = Color3.fromRGB(0, 0, 0)
 real.BorderSizePixel = 0
 real.Position = UDim2.new(0.03125, 0, 0.199288249, 0)
 real.Size = UDim2.new(0, 391, 0, 180)
+real.Visible = false
 real.BottomImage = "rbxassetid://148970562"
 real.CanvasSize = UDim2.new(0, 0, 30, 0)
 real.MidImage = "rbxassetid://148970562"
@@ -87,6 +92,7 @@ execute.BorderColor3 = Color3.fromRGB(0, 0, 0)
 execute.BorderSizePixel = 0
 execute.Position = UDim2.new(0.03125, 0, 0.868327379, 0)
 execute.Size = UDim2.new(0, 112, 0, 31)
+execute.Visible = false
 execute.Font = Enum.Font.SourceSans
 execute.Text = "EXECUTE"
 execute.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -101,6 +107,7 @@ title_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 title_2.BorderSizePixel = 0
 title_2.Position = UDim2.new(0.729166687, 0, 0.199288249, 0)
 title_2.Size = UDim2.new(0, 144, 0, 179)
+title_2.Visible = false
 title_2.Font = Enum.Font.SourceSans
 title_2.Text = "Big thank for you!"
 title_2.TextColor3 = Color3.fromRGB(255, 198, 28)
@@ -115,6 +122,7 @@ attach.BorderColor3 = Color3.fromRGB(0, 0, 0)
 attach.BorderSizePixel = 0
 attach.Position = UDim2.new(0.784722209, 0, 0.868327379, 0)
 attach.Size = UDim2.new(0, 112, 0, 31)
+attach.Visible = false
 attach.Font = Enum.Font.SourceSans
 attach.Text = "INJECT"
 attach.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -129,6 +137,7 @@ clear.BorderColor3 = Color3.fromRGB(0, 0, 0)
 clear.BorderSizePixel = 0
 clear.Position = UDim2.new(0.244791672, 0, 0.868327379, 0)
 clear.Size = UDim2.new(0, 112, 0, 31)
+clear.Visible = false
 clear.Font = Enum.Font.SourceSans
 clear.Text = "CLEAR"
 clear.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -144,6 +153,7 @@ status.BorderColor3 = Color3.fromRGB(0, 0, 0)
 status.BorderSizePixel = 0
 status.Position = UDim2.new(0.303819448, 0, 0.153024912, 0)
 status.Size = UDim2.new(0, 222, 0, 10)
+status.Visible = false
 status.Font = Enum.Font.SourceSans
 status.Text = "[status : not injected]"
 status.TextColor3 = Color3.fromRGB(255, 198, 28)
@@ -158,6 +168,7 @@ close.BorderColor3 = Color3.fromRGB(0, 0, 0)
 close.BorderSizePixel = 0
 close.Position = UDim2.new(0.946180582, 0, 0, 0)
 close.Size = UDim2.new(0, 30, 0, 31)
+close.Visible = false
 close.Font = Enum.Font.SourceSans
 close.Text = "X"
 close.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -165,9 +176,18 @@ close.TextScaled = true
 close.TextSize = 14.000
 close.TextWrapped = true
 
+ImageLabel.Parent = main
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageLabel.BorderSizePixel = 0
+ImageLabel.ClipsDescendants = true
+ImageLabel.Size = UDim2.new(0, 100, 0, 100)
+ImageLabel.Image = "http://www.roblox.com/asset/?id=12480506792"
+
 -- Scripts:
 
-local function SZUSSFV_fake_script() -- execute.EXECUTE_ 
+local function ZMJBUJE_fake_script() -- execute.EXECUTE_ 
 	local script = Instance.new('LocalScript', execute)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -182,8 +202,8 @@ local function SZUSSFV_fake_script() -- execute.EXECUTE_
 		end
 	end)
 end
-coroutine.wrap(SZUSSFV_fake_script)()
-local function NPFABY_fake_script() -- attach.ATTACH_ 
+coroutine.wrap(ZMJBUJE_fake_script)()
+local function LIZAI_fake_script() -- attach.ATTACH_ 
 	local script = Instance.new('LocalScript', attach)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -205,11 +225,12 @@ local function NPFABY_fake_script() -- attach.ATTACH_
 			script.Parent.Parent.status.Text = "[injected!]"
 			wait(0.5)
 			script.Parent.Parent.status.Text = "[status : injected]"
+			injected = true
 		end
 	end)
 end
-coroutine.wrap(NPFABY_fake_script)()
-local function JEDVNDG_fake_script() -- clear.CLEAR_ 
+coroutine.wrap(LIZAI_fake_script)()
+local function JBRKPRG_fake_script() -- clear.CLEAR_ 
 	local script = Instance.new('LocalScript', clear)
 
 	local v = script.Parent.Parent.real.source
@@ -218,16 +239,40 @@ local function JEDVNDG_fake_script() -- clear.CLEAR_
 		v.Text = ""
 	end)
 end
-coroutine.wrap(JEDVNDG_fake_script)()
-local function XUCCMQW_fake_script() -- close.close._ 
+coroutine.wrap(JBRKPRG_fake_script)()
+local function JRQVX_fake_script() -- close.close._ 
 	local script = Instance.new('LocalScript', close)
 
+	local r = script.Parent.Parent.real
+	local a = script.Parent.Parent.attach
+	local c = script.Parent.Parent.clear
+	local l = script.Parent.Parent.close
+	local e = script.Parent.Parent.execute
+	local s = script.Parent.Parent.status
+	local t = script.Parent.Parent.title
+	local t2 = script.Parent.Parent.title_2
+	
 	script.Parent.MouseButton1Click:Connect(function()
+		r.Visible = false
+		a.Visible = false
+		c.Visible = false
+		l.Visible = false
+		e.Visible = false
+		s.Visible = false
+		t.Visible = false
+		t2.Visible = false
+		local object = script.Parent.Parent
+		object.AnchorPoint = Vector2.new(0.5, 0.5)
+		object.Position = UDim2.new(0.5, 0, 0.5, 0)
+	
+		--When the game starts, it will wait 2 seconds, then make the tween.
+		object:TweenSize(UDim2.new(0, -3, 0, -3), Enum.EasingDirection.Out, Enum.EasingStyle.Quint)
+		wait(1)
 		script.Parent.Parent.Parent:Destroy()
 	end)
 end
-coroutine.wrap(XUCCMQW_fake_script)()
-local function DRULM_fake_script() -- main.drag._ 
+coroutine.wrap(JRQVX_fake_script)()
+local function DSJPGHB_fake_script() -- main.drag._ 
 	local script = Instance.new('LocalScript', main)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -270,4 +315,92 @@ local function DRULM_fake_script() -- main.drag._
 		end
 	end)
 end
-coroutine.wrap(DRULM_fake_script)()
+coroutine.wrap(DSJPGHB_fake_script)()
+local function JQYAOUN_fake_script() -- ImageLabel.visible 
+	local script = Instance.new('LocalScript', ImageLabel)
+
+	local a = script.Parent
+	wait(3)
+	a.Transparency = 0.1
+	a.ImageTransparency = 0.1
+	wait(0.1)
+	a.Transparency = 0.2
+	a.ImageTransparency = 0.2
+	wait(0.1)
+	a.Transparency = 0.3
+	a.ImageTransparency = 0.3
+	wait(0.1)
+	a.Transparency = 0.4
+	a.ImageTransparency = 0.4
+	wait(0.1)
+	a.Transparency = 0.5
+	a.ImageTransparency = 0.5
+	wait(0.1)
+	a.Transparency = 0.5
+	a.ImageTransparency = 0.5
+	wait(0.1)
+	a.Transparency = 0.6
+	a.ImageTransparency = 0.6
+	wait(0.1)
+	a.Transparency = 0.7
+	a.ImageTransparency = 0.7
+	wait(0.1)
+	a.Transparency = 0.8
+	a.ImageTransparency = 0.8
+	wait(0.1)
+	a.Transparency = 0.9
+	a.ImageTransparency = 0.9
+	wait(0.1)
+	a.Transparency = 1
+	a.ImageTransparency = 1
+end
+coroutine.wrap(JQYAOUN_fake_script)()
+local function LPEULGM_fake_script() -- ImageLabel.load2 
+	local script = Instance.new('LocalScript', ImageLabel)
+
+	local object = script.Parent
+	object.AnchorPoint = Vector2.new(0.5, 0.5)
+	object.Position = UDim2.new(0.5, 0, 0.5, 0)
+	
+	--When the game starts, it will wait 2 seconds, then make the tween.
+	wait(2)
+	object:TweenSize(UDim2.new(0, 576,0, 281), Enum.EasingDirection.Out, Enum.EasingStyle.Quint)
+end
+coroutine.wrap(LPEULGM_fake_script)()
+local function GTASRIT_fake_script() -- main.intro 
+	local script = Instance.new('LocalScript', main)
+
+	local object = script.Parent
+	object.AnchorPoint = Vector2.new(0.5, 0.5)
+	object.Position = UDim2.new(0.5, 0, 0.5, 0)
+	
+	--When the game starts, it will wait 2 seconds, then make the tween.
+	wait(2)
+	object:TweenSize(UDim2.new(0, 576,0, 281), Enum.EasingDirection.Out, Enum.EasingStyle.Quint)
+end
+coroutine.wrap(GTASRIT_fake_script)()
+local function JGOMQZV_fake_script() -- main.load 
+	local script = Instance.new('LocalScript', main)
+
+	local r = script.Parent.real
+	local d = script.Parent.attach
+	local c = script.Parent.clear
+	local l = script.Parent.close
+	local e = script.Parent.execute
+	local s = script.Parent.status
+	local t = script.Parent.title_2
+	local o = script.Parent.title
+	
+	wait(3)
+	r.Visible = true
+	d.Visible = true
+	c.Visible = true
+	l.Visible = true
+	e.Visible = true
+	s.Visible = true
+	t.Visible = true
+	o.Visible = true
+	print("Loaded!")
+end
+coroutine.wrap(JGOMQZV_fake_script)()
+-- main.README_ is disabled.
