@@ -15,6 +15,13 @@ local attach = Instance.new("TextButton")
 local clear = Instance.new("TextButton")
 local status = Instance.new("TextLabel")
 local close = Instance.new("TextButton")
+local output = Instance.new("TextButton")
+local OutputFrame = Instance.new("Frame")
+local blankLine = Instance.new("TextLabel")
+local scroll = Instance.new("ScrollingFrame")
+local TextLabel = Instance.new("TextLabel")
+local TextLabel_2 = Instance.new("TextLabel")
+local outputclose = Instance.new("TextButton")
 
 local injected = false
 
@@ -166,9 +173,100 @@ close.TextScaled = true
 close.TextSize = 14.000
 close.TextWrapped = true
 
+output.Name = "output"
+output.Parent = main
+output.BackgroundColor3 = Color3.fromRGB(255, 198, 28)
+output.BorderColor3 = Color3.fromRGB(0, 0, 0)
+output.BorderSizePixel = 0
+output.Position = UDim2.new(0.576388896, 0, 0.868327379, 0)
+output.Size = UDim2.new(0, 112, 0, 31)
+output.Font = Enum.Font.SourceSans
+output.Text = "OUTPUT"
+output.TextColor3 = Color3.fromRGB(0, 0, 0)
+output.TextScaled = true
+output.TextSize = 14.000
+output.TextWrapped = true
+
+OutputFrame.Name = "OutputFrame"
+OutputFrame.Parent = gui
+OutputFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+OutputFrame.BackgroundTransparency = 0.500
+OutputFrame.BorderSizePixel = 0
+OutputFrame.Position = UDim2.new(0, 945, 0, 148)
+OutputFrame.Size = UDim2.new(0, 353, 0, 212)
+OutputFrame.ZIndex = 10
+
+blankLine.Name = "blankLine"
+blankLine.Parent = game.StarterGui.gui.OutputFrame.outputUpdate
+blankLine.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+blankLine.BackgroundTransparency = 1.000
+blankLine.BorderColor3 = Color3.fromRGB(0, 0, 0)
+blankLine.BorderSizePixel = 0
+blankLine.ZIndex = 10
+blankLine.Font = Enum.Font.ArialBold
+blankLine.Text = ""
+blankLine.TextColor3 = Color3.fromRGB(0, 0, 0)
+blankLine.TextSize = 18.000
+blankLine.TextXAlignment = Enum.TextXAlignment.Left
+
+scroll.Name = "scroll"
+scroll.Parent = OutputFrame
+scroll.BackgroundColor3 = Color3.fromRGB(62, 62, 62)
+scroll.BorderColor3 = Color3.fromRGB(0, 0, 0)
+scroll.Size = UDim2.new(0, 353, 0, 212)
+scroll.ZIndex = 9
+scroll.BottomImage = "rbxassetid://185945953"
+scroll.CanvasSize = UDim2.new(0, 0, 0, 0)
+scroll.MidImage = "rbxassetid://185945953"
+scroll.ScrollBarThickness = 10
+scroll.TopImage = "rbxassetid://185945953"
+
+TextLabel.Parent = OutputFrame
+TextLabel.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0, 0, -0.183962271, 0)
+TextLabel.Size = UDim2.new(0, 353, 0, 39)
+TextLabel.ZIndex = 0
+TextLabel.Font = Enum.Font.FredokaOne
+TextLabel.Text = "Script Output"
+TextLabel.TextColor3 = Color3.fromRGB(255, 198, 28)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+TextLabel.TextYAlignment = Enum.TextYAlignment.Bottom
+
+TextLabel_2.Parent = TextLabel
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.BorderSizePixel = 0
+TextLabel_2.Position = UDim2.new(0.175637394, 0, 0, 0)
+TextLabel_2.Size = UDim2.new(0, 211, 0, 8)
+TextLabel_2.Font = Enum.Font.SourceSans
+TextLabel_2.Text = "YOU CAN'T DRAG!"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 198, 28)
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextYAlignment = Enum.TextYAlignment.Bottom
+
+outputclose.Name = "outputclose"
+outputclose.Parent = OutputFrame
+outputclose.BackgroundColor3 = Color3.fromRGB(255, 198, 28)
+outputclose.BorderColor3 = Color3.fromRGB(0, 0, 0)
+outputclose.BorderSizePixel = 0
+outputclose.Position = UDim2.new(0.890369117, 0, -0.183962271, 0)
+outputclose.Size = UDim2.new(0, 38, 0, 39)
+outputclose.ZIndex = 5
+outputclose.Font = Enum.Font.SourceSans
+outputclose.Text = "X"
+outputclose.TextColor3 = Color3.fromRGB(0, 0, 0)
+outputclose.TextScaled = true
+outputclose.TextSize = 14.000
+outputclose.TextWrapped = true
+
 -- Scripts:
 
-local function HLADN_fake_script() -- execute.EXECUTE_ 
+local function GNWTY_fake_script() -- execute.EXECUTE_ 
 	local script = Instance.new('LocalScript', execute)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -183,8 +281,8 @@ local function HLADN_fake_script() -- execute.EXECUTE_
 		end
 	end)
 end
-coroutine.wrap(HLADN_fake_script)()
-local function BWVJTZD_fake_script() -- attach.ATTACH_ 
+coroutine.wrap(GNWTY_fake_script)()
+local function WJGYM_fake_script() -- attach.ATTACH_ 
 	local script = Instance.new('LocalScript', attach)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -206,12 +304,11 @@ local function BWVJTZD_fake_script() -- attach.ATTACH_
 			script.Parent.Parent.status.Text = "[injected!]"
 			wait(0.5)
 			script.Parent.Parent.status.Text = "[status : injected]"
-			injected = true
 		end
 	end)
 end
-coroutine.wrap(BWVJTZD_fake_script)()
-local function JQNBOGU_fake_script() -- clear.CLEAR_ 
+coroutine.wrap(WJGYM_fake_script)()
+local function CPHXZSZ_fake_script() -- clear.CLEAR_ 
 	local script = Instance.new('LocalScript', clear)
 
 	local v = script.Parent.Parent.real.source
@@ -220,16 +317,16 @@ local function JQNBOGU_fake_script() -- clear.CLEAR_
 		v.Text = ""
 	end)
 end
-coroutine.wrap(JQNBOGU_fake_script)()
-local function DTLTL_fake_script() -- close.close._ 
+coroutine.wrap(CPHXZSZ_fake_script)()
+local function WLFHYUX_fake_script() -- close.close._ 
 	local script = Instance.new('LocalScript', close)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Parent:Destroy()
 	end)
 end
-coroutine.wrap(DTLTL_fake_script)()
-local function SPQVH_fake_script() -- main.drag._ 
+coroutine.wrap(WLFHYUX_fake_script)()
+local function HBTN_fake_script() -- main.drag._ 
 	local script = Instance.new('LocalScript', main)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -272,4 +369,93 @@ local function SPQVH_fake_script() -- main.drag._
 		end
 	end)
 end
-coroutine.wrap(SPQVH_fake_script)()
+coroutine.wrap(HBTN_fake_script)()
+local function XJPFVX_fake_script() -- output.OUTPUT_ 
+	local script = Instance.new('LocalScript', output)
+
+	local output = script.Parent.Parent.Parent.OutputFrame
+	local a = script.Parent
+	
+	a.MouseButton1Click:Connect(function()
+		output.Visible = true
+	end)
+end
+coroutine.wrap(XJPFVX_fake_script)()
+local function YBDTK_fake_script() -- OutputFrame.outputUpdate 
+	local script = Instance.new('Script', OutputFrame)
+
+	-- script nhu con cac :))))))))
+	
+	local colors = {
+		[Enum.MessageType.MessageOutput] = BrickColor.new("White").Color;
+		[Enum.MessageType.MessageInfo] = BrickColor.new("Bright blue").Color;
+		[Enum.MessageType.MessageWarning] =	BrickColor.new("Bright yellow").Color;
+		[Enum.MessageType.MessageError]	 = BrickColor.new("Bright red").Color;
+	}
+	local canvasX = 0
+	
+	game:getService("LogService").MessageOut:connect(function(output, messageType)
+		local newLine = script.blankLine:clone()
+		newLine.TextColor3 = colors[messageType]
+		newLine.Position = UDim2.new(0, 5, 0, (#script.Parent.scroll:getChildren() * 15))
+		newLine.Text = output
+		newLine.Name = tick()
+		newLine.Parent = script.Parent.scroll
+		newLine.Size = UDim2.new(0, (#output * 10), 0, 15)
+		canvasX = (canvasX > (#output * 10) and canvasX or (#output * 10))
+		script.Parent.scroll.CanvasSize = UDim2.new(0, (canvasX + 10), 0, ((#script.Parent.scroll:getChildren() + 1) * 15))
+	end)
+end
+coroutine.wrap(YBDTK_fake_script)()
+local function RAECG_fake_script() -- OutputFrame.drag._ 
+	local script = Instance.new('LocalScript', OutputFrame)
+
+	local UserInputService = game:GetService("UserInputService")
+	
+	local gui = script.Parent
+	
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	
+	local function update(input)
+		local delta = input.Position - dragStart
+		gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+	end
+	
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+	
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	
+	UserInputService.InputChanged:Connect(function(input)
+		if input == dragInput and dragging then
+			update(input)
+		end
+	end)
+end
+coroutine.wrap(RAECG_fake_script)()
+local function YONX_fake_script() -- outputclose.outputclose._ 
+	local script = Instance.new('LocalScript', outputclose)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Visible = false
+	end)
+end
+coroutine.wrap(YONX_fake_script)()
