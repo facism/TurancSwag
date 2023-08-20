@@ -16,12 +16,14 @@ local clear = Instance.new("TextButton")
 local status = Instance.new("TextLabel")
 local close = Instance.new("TextButton")
 local output = Instance.new("TextButton")
+local ImageLabel = Instance.new("ImageLabel")
 local OutputFrame = Instance.new("Frame")
 local blankLine = Instance.new("TextLabel")
 local scroll = Instance.new("ScrollingFrame")
 local TextLabel = Instance.new("TextLabel")
 local TextLabel_2 = Instance.new("TextLabel")
 local outputclose = Instance.new("TextButton")
+local ImageLabel_2 = Instance.new("ImageLabel")
 
 local injected = false
 
@@ -187,6 +189,15 @@ output.TextScaled = true
 output.TextSize = 14.000
 output.TextWrapped = true
 
+ImageLabel.Parent = main
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageLabel.BorderSizePixel = 0
+ImageLabel.Position = UDim2.new(0.020833334, 0, 0.0213523135, 0)
+ImageLabel.Size = UDim2.new(0, 43, 0, 43)
+ImageLabel.Image = "http://www.roblox.com/asset/?id=12480506792"
+
 OutputFrame.Name = "OutputFrame"
 OutputFrame.Parent = gui
 OutputFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -264,9 +275,18 @@ outputclose.TextScaled = true
 outputclose.TextSize = 14.000
 outputclose.TextWrapped = true
 
+ImageLabel_2.Parent = OutputFrame
+ImageLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel_2.BackgroundTransparency = 1.000
+ImageLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageLabel_2.BorderSizePixel = 0
+ImageLabel_2.Position = UDim2.new(0, 0, -0.183962271, 0)
+ImageLabel_2.Size = UDim2.new(0, 39, 0, 39)
+ImageLabel_2.Image = "http://www.roblox.com/asset/?id=12480506792"
+
 -- Scripts:
 
-local function GNWTY_fake_script() -- execute.EXECUTE_ 
+local function ZGJWLK_fake_script() -- execute.EXECUTE_ 
 	local script = Instance.new('LocalScript', execute)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -281,8 +301,8 @@ local function GNWTY_fake_script() -- execute.EXECUTE_
 		end
 	end)
 end
-coroutine.wrap(GNWTY_fake_script)()
-local function WJGYM_fake_script() -- attach.ATTACH_ 
+coroutine.wrap(ZGJWLK_fake_script)()
+local function HSHZQ_fake_script() -- attach.ATTACH_ 
 	local script = Instance.new('LocalScript', attach)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -307,8 +327,8 @@ local function WJGYM_fake_script() -- attach.ATTACH_
 		end
 	end)
 end
-coroutine.wrap(WJGYM_fake_script)()
-local function CPHXZSZ_fake_script() -- clear.CLEAR_ 
+coroutine.wrap(HSHZQ_fake_script)()
+local function NNTDIR_fake_script() -- clear.CLEAR_ 
 	local script = Instance.new('LocalScript', clear)
 
 	local v = script.Parent.Parent.real.source
@@ -317,16 +337,16 @@ local function CPHXZSZ_fake_script() -- clear.CLEAR_
 		v.Text = ""
 	end)
 end
-coroutine.wrap(CPHXZSZ_fake_script)()
-local function WLFHYUX_fake_script() -- close.close._ 
+coroutine.wrap(NNTDIR_fake_script)()
+local function WDLCO_fake_script() -- close.close._ 
 	local script = Instance.new('LocalScript', close)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Parent:Destroy()
 	end)
 end
-coroutine.wrap(WLFHYUX_fake_script)()
-local function HBTN_fake_script() -- main.drag._ 
+coroutine.wrap(WDLCO_fake_script)()
+local function VCKF_fake_script() -- main.drag._ 
 	local script = Instance.new('LocalScript', main)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -369,8 +389,8 @@ local function HBTN_fake_script() -- main.drag._
 		end
 	end)
 end
-coroutine.wrap(HBTN_fake_script)()
-local function XJPFVX_fake_script() -- output.OUTPUT_ 
+coroutine.wrap(VCKF_fake_script)()
+local function DCZBY_fake_script() -- output.OUTPUT_ 
 	local script = Instance.new('LocalScript', output)
 
 	local output = script.Parent.Parent.Parent.OutputFrame
@@ -380,8 +400,8 @@ local function XJPFVX_fake_script() -- output.OUTPUT_
 		output.Visible = true
 	end)
 end
-coroutine.wrap(XJPFVX_fake_script)()
-local function YBDTK_fake_script() -- OutputFrame.outputUpdate 
+coroutine.wrap(DCZBY_fake_script)()
+local function IVVTKN_fake_script() -- OutputFrame.outputUpdate 
 	local script = Instance.new('Script', OutputFrame)
 
 	-- script nhu con cac :))))))))
@@ -406,8 +426,8 @@ local function YBDTK_fake_script() -- OutputFrame.outputUpdate
 		script.Parent.scroll.CanvasSize = UDim2.new(0, (canvasX + 10), 0, ((#script.Parent.scroll:getChildren() + 1) * 15))
 	end)
 end
-coroutine.wrap(YBDTK_fake_script)()
-local function RAECG_fake_script() -- OutputFrame.drag._ 
+coroutine.wrap(IVVTKN_fake_script)()
+local function WDHIPX_fake_script() -- OutputFrame.drag._ 
 	local script = Instance.new('LocalScript', OutputFrame)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -450,12 +470,12 @@ local function RAECG_fake_script() -- OutputFrame.drag._
 		end
 	end)
 end
-coroutine.wrap(RAECG_fake_script)()
-local function YONX_fake_script() -- outputclose.outputclose._ 
+coroutine.wrap(WDHIPX_fake_script)()
+local function PAPNKJ_fake_script() -- outputclose.outputclose._ 
 	local script = Instance.new('LocalScript', outputclose)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Visible = false
 	end)
 end
-coroutine.wrap(YONX_fake_script)()
+coroutine.wrap(PAPNKJ_fake_script)()
