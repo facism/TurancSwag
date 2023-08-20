@@ -3,28 +3,56 @@
 
 -- Instances:
 
-local OutputGui = Instance.new("ScreenGui")
-local OutputFrame = Instance.new("Frame")
-local blankLine = Instance.new("TextLabel")
+local output = Instance.new("ScreenGui")
+local drag = Instance.new("Frame")
 local scroll = Instance.new("ScrollingFrame")
-local label = Instance.new("TextLabel")
-local exit = Instance.new("TextButton")
+local close = Instance.new("TextButton")
+local blankLine = Instance.new("TextLabel")
+local open = Instance.new("TextButton")
 
 --Properties:
 
-OutputGui.Name = "OutputGui"
-OutputGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+output.Name = "output"
+output.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+output.ResetOnSpawn = false
 
-OutputFrame.Name = "OutputFrame"
-OutputFrame.Parent = OutputGui
-OutputFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-OutputFrame.BackgroundTransparency = 0.500
-OutputFrame.BorderSizePixel = 0
-OutputFrame.Position = UDim2.new(0, 979, 0, 266)
-OutputFrame.Size = UDim2.new(0, 255, 0, 193)
+drag.Name = "drag"
+drag.Parent = output
+drag.Active = true
+drag.BackgroundColor3 = Color3.fromRGB(255, 198, 28)
+drag.BorderColor3 = Color3.fromRGB(0, 0, 0)
+drag.Draggable = true
+drag.Position = UDim2.new(1, -630, 0.998765409, -657)
+drag.Size = UDim2.new(0, 385, 0, 15)
+drag.ZIndex = 10
+
+scroll.Name = "scroll"
+scroll.Parent = drag
+scroll.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
+scroll.BorderColor3 = Color3.fromRGB(0, 0, 0)
+scroll.Position = UDim2.new(0, 0, 0, 15)
+scroll.Size = UDim2.new(1, 15, 0, 200)
+scroll.ZIndex = 9
+scroll.BottomImage = "rbxassetid://185945953"
+scroll.CanvasSize = UDim2.new(0, 0, 0, 0)
+scroll.MidImage = "rbxassetid://185945953"
+scroll.ScrollBarThickness = 10
+scroll.TopImage = "rbxassetid://185945953"
+
+close.Name = "close"
+close.Parent = drag
+close.BackgroundColor3 = Color3.fromRGB(196, 40, 28)
+close.BorderColor3 = Color3.fromRGB(0, 0, 0)
+close.Position = UDim2.new(1, 0, 0, 0)
+close.Size = UDim2.new(0, 15, 1, 0)
+close.ZIndex = 10
+close.Font = Enum.Font.ArialBold
+close.Text = "X"
+close.TextColor3 = Color3.fromRGB(0, 0, 0)
+close.TextSize = 14.000
 
 blankLine.Name = "blankLine"
-blankLine.Parent = game.StarterGui.OutputGui.OutputFrame.outputUpdate
+blankLine.Parent = game.StarterGui.output.drag.outputUpdate
 blankLine.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 blankLine.BackgroundTransparency = 1.000
 blankLine.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -36,56 +64,33 @@ blankLine.TextColor3 = Color3.fromRGB(0, 0, 0)
 blankLine.TextSize = 18.000
 blankLine.TextXAlignment = Enum.TextXAlignment.Left
 
-scroll.Name = "scroll"
-scroll.Parent = OutputFrame
-scroll.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
-scroll.BorderColor3 = Color3.fromRGB(0, 0, 0)
-scroll.Position = UDim2.new(-0.00112783397, 0, 0.00518134702, 0)
-scroll.Size = UDim2.new(0, 255, 0, 192)
-scroll.ZIndex = 9
-scroll.BottomImage = "rbxassetid://185945953"
-scroll.CanvasSize = UDim2.new(0, 0, 0, 0)
-scroll.MidImage = "rbxassetid://185945953"
-scroll.ScrollBarThickness = 10
-scroll.TopImage = "rbxassetid://185945953"
-
-label.Name = "label"
-label.Parent = OutputFrame
-label.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
-label.BorderColor3 = Color3.fromRGB(0, 0, 0)
-label.BorderSizePixel = 0
-label.Position = UDim2.new(0, 0, -0.186528504, 0)
-label.Size = UDim2.new(0, 254, 0, 36)
-label.Font = Enum.Font.FredokaOne
-label.Text = "CHEESY OUTPUT"
-label.TextColor3 = Color3.fromRGB(255, 198, 28)
-label.TextSize = 25.000
-label.TextWrapped = true
-
-exit.Name = "exit"
-exit.Parent = OutputFrame
-exit.BackgroundColor3 = Color3.fromRGB(255, 198, 28)
-exit.BorderColor3 = Color3.fromRGB(0, 0, 0)
-exit.BorderSizePixel = 0
-exit.Position = UDim2.new(0.862745106, 0, -0.186528504, 0)
-exit.Size = UDim2.new(0, 34, 0, 36)
-exit.Font = Enum.Font.SourceSans
-exit.Text = "X"
-exit.TextColor3 = Color3.fromRGB(0, 0, 0)
-exit.TextScaled = true
-exit.TextSize = 14.000
-exit.TextWrapped = true
+open.Name = "open"
+open.Parent = output
+open.BackgroundColor3 = Color3.fromRGB(75, 151, 75)
+open.BorderColor3 = Color3.fromRGB(0, 0, 0)
+open.Position = UDim2.new(1, -15, 1, -15)
+open.Size = UDim2.new(0, 15, 0, 15)
+open.ZIndex = 8
+open.Font = Enum.Font.ArialBold
+open.Text = "O"
+open.TextColor3 = Color3.fromRGB(1, 1, 1)
+open.TextSize = 14.000
 
 -- Scripts:
 
-local function SNZKBS_fake_script() -- OutputFrame.outputUpdate 
-	local script = Instance.new('Script', OutputFrame)
+local function LKUQRW_fake_script() -- close.LocalScript 
+	local script = Instance.new('LocalScript', close)
 
-	-- All credits goes to: DoctorKuro --
-	-- Do not Steal this Please --
-	
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Visible = false
+	end)
+end
+coroutine.wrap(LKUQRW_fake_script)()
+local function JVCXU_fake_script() -- drag.outputUpdate 
+	local script = Instance.new('Script', drag)
+
 	local colors = {
-		[Enum.MessageType.MessageOutput] = BrickColor.new("White").Color;
+		[Enum.MessageType.MessageOutput] = BrickColor.new("Black").Color;
 		[Enum.MessageType.MessageInfo] = BrickColor.new("Bright blue").Color;
 		[Enum.MessageType.MessageWarning] =	BrickColor.new("Bright yellow").Color;
 		[Enum.MessageType.MessageError]	 = BrickColor.new("Bright red").Color;
@@ -114,56 +119,15 @@ local function SNZKBS_fake_script() -- OutputFrame.outputUpdate
 		script.Parent.Parent.open.Visible = true
 	end)
 end
-coroutine.wrap(SNZKBS_fake_script)()
-local function YYEEEH_fake_script() -- exit.LocalScript 
-	local script = Instance.new('LocalScript', exit)
+coroutine.wrap(JVCXU_fake_script)()
+local function NRUA_fake_script() -- open.LocalScript 
+	local script = Instance.new('LocalScript', open)
 
-	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Parent:Destroy()
-	end)
-end
-coroutine.wrap(YYEEEH_fake_script)()
-local function DIZPC_fake_script() -- OutputFrame.drag._ 
-	local script = Instance.new('LocalScript', OutputFrame)
-
-	local UserInputService = game:GetService("UserInputService")
-	
-	local gui = script.Parent
-	
-	local dragging
-	local dragInput
-	local dragStart
-	local startPos
-	
-	local function update(input)
-		local delta = input.Position - dragStart
-		gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+	player =game.Players.LocalPlayer
+	if player.Name == "monkeyman8446" or player.Name == "ErickThePresident" then
+		script.Parent.Visible = true 
+	else
+		script.Parent.Visible = false
 	end
-	
-	gui.InputBegan:Connect(function(input)
-		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-			dragging = true
-			dragStart = input.Position
-			startPos = gui.Position
-	
-			input.Changed:Connect(function()
-				if input.UserInputState == Enum.UserInputState.End then
-					dragging = false
-				end
-			end)
-		end
-	end)
-	
-	gui.InputChanged:Connect(function(input)
-		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-			dragInput = input
-		end
-	end)
-	
-	UserInputService.InputChanged:Connect(function(input)
-		if input == dragInput and dragging then
-			update(input)
-		end
-	end)
 end
-coroutine.wrap(DIZPC_fake_script)()
+coroutine.wrap(NRUA_fake_script)()
