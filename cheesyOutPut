@@ -78,15 +78,7 @@ open.TextSize = 14.000
 
 -- Scripts:
 
-local function LKUQRW_fake_script() -- close.LocalScript 
-	local script = Instance.new('LocalScript', close)
-
-	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Visible = false
-	end)
-end
-coroutine.wrap(LKUQRW_fake_script)()
-local function JVCXU_fake_script() -- drag.outputUpdate 
+local function BVEPR_fake_script() -- drag.outputUpdate 
 	local script = Instance.new('Script', drag)
 
 	local colors = {
@@ -119,15 +111,15 @@ local function JVCXU_fake_script() -- drag.outputUpdate
 		script.Parent.Parent.open.Visible = true
 	end)
 end
-coroutine.wrap(JVCXU_fake_script)()
-local function NRUA_fake_script() -- open.LocalScript 
+coroutine.wrap(BVEPR_fake_script)()
+local function AOWT_fake_script() -- open.LocalScript 
 	local script = Instance.new('LocalScript', open)
 
-	player =game.Players.LocalPlayer
-	if player.Name == "monkeyman8446" or player.Name == "ErickThePresident" then
+	local player = game.Players.LocalPlayer
+	if player.Name == "accmoitao1122" or player.Name == "signupredir111fan19" then
 		script.Parent.Visible = true 
 	else
 		script.Parent.Visible = false
 	end
 end
-coroutine.wrap(NRUA_fake_script)()
+coroutine.wrap(AOWT_fake_script)()
