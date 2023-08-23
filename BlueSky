@@ -1,0 +1,511 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local BlueSky = Instance.new("ScreenGui")
+local main = Instance.new("Frame")
+local c3 = Instance.new("TextButton")
+local close = Instance.new("TextButton")
+local title_2 = Instance.new("TextLabel")
+local real = Instance.new("ScrollingFrame")
+local source = Instance.new("TextBox")
+local corner = Instance.new("UICorner")
+local clear = Instance.new("TextButton")
+local title2 = Instance.new("TextLabel")
+local status = Instance.new("TextLabel")
+local execute = Instance.new("TextButton")
+local credits = Instance.new("Frame")
+local creditsmain = Instance.new("TextLabel")
+local ImageLabel = Instance.new("ImageLabel")
+local UICorner = Instance.new("UICorner")
+local name = Instance.new("TextLabel")
+local idk = Instance.new("TextLabel")
+local creditexit = Instance.new("TextButton")
+local codesign = Instance.new("ImageLabel")
+local attach = Instance.new("TextButton")
+local title = Instance.new("TextLabel")
+
+local injected = true
+--Properties:
+
+BlueSky.Name = "BlueSky"
+BlueSky.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+BlueSky.ResetOnSpawn = false
+
+main.Name = "main"
+main.Parent = BlueSky
+main.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
+main.BorderColor3 = Color3.fromRGB(0, 0, 0)
+main.BorderSizePixel = 0
+main.Position = UDim2.new(0.524011493, 0, 0.385847092, 0)
+main.Size = UDim2.new(0, 100, 0, 100)
+
+c3.Name = "c3"
+c3.Parent = main
+c3.BackgroundColor3 = Color3.fromRGB(72, 72, 72)
+c3.BorderColor3 = Color3.fromRGB(43, 153, 255)
+c3.Position = UDim2.new(0.571180582, 0, 0.868327379, 0)
+c3.Size = UDim2.new(0, 112, 0, 31)
+c3.Visible = false
+c3.ZIndex = 0
+c3.Font = Enum.Font.SourceSans
+c3.Text = "CREDITS"
+c3.TextColor3 = Color3.fromRGB(255, 255, 255)
+c3.TextScaled = true
+c3.TextSize = 14.000
+c3.TextWrapped = true
+
+close.Name = "close"
+close.Parent = main
+close.BackgroundColor3 = Color3.fromRGB(72, 72, 72)
+close.BorderColor3 = Color3.fromRGB(43, 153, 255)
+close.Position = UDim2.new(0.946180582, 0, 0, 0)
+close.Size = UDim2.new(0, 30, 0, 31)
+close.Visible = false
+close.Font = Enum.Font.SourceSans
+close.Text = "X"
+close.TextColor3 = Color3.fromRGB(255, 255, 255)
+close.TextScaled = true
+close.TextSize = 14.000
+close.TextWrapped = true
+
+title_2.Name = "title_2"
+title_2.Parent = main
+title_2.BackgroundColor3 = Color3.fromRGB(72, 72, 72)
+title_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+title_2.BorderSizePixel = 0
+title_2.Position = UDim2.new(0.729166687, 0, 0.199288249, 0)
+title_2.Size = UDim2.new(0, 144, 0, 179)
+title_2.Visible = false
+title_2.Font = Enum.Font.SourceSans
+title_2.Text = "Big thank for you!"
+title_2.TextColor3 = Color3.fromRGB(43, 153, 255)
+title_2.TextSize = 14.000
+title_2.TextXAlignment = Enum.TextXAlignment.Left
+title_2.TextYAlignment = Enum.TextYAlignment.Top
+
+real.Name = "real"
+real.Parent = main
+real.Active = true
+real.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+real.BackgroundTransparency = 1.000
+real.BorderColor3 = Color3.fromRGB(0, 0, 0)
+real.BorderSizePixel = 0
+real.Position = UDim2.new(0.03125, 0, 0.199288249, 0)
+real.Size = UDim2.new(0, 391, 0, 180)
+real.Visible = false
+real.BottomImage = "rbxassetid://148970562"
+real.CanvasSize = UDim2.new(0, 0, 30, 0)
+real.MidImage = "rbxassetid://148970562"
+real.TopImage = "rbxassetid://148970562"
+
+source.Name = "source"
+source.Parent = real
+source.BackgroundColor3 = Color3.fromRGB(72, 72, 72)
+source.BorderColor3 = Color3.fromRGB(0, 0, 0)
+source.BorderSizePixel = 0
+source.Size = UDim2.new(1, 0, 0.5, 0)
+source.ClearTextOnFocus = false
+source.Font = Enum.Font.SourceSans
+source.MultiLine = true
+source.Text = ""
+source.TextColor3 = Color3.fromRGB(43, 153, 255)
+source.TextSize = 14.000
+source.TextXAlignment = Enum.TextXAlignment.Left
+source.TextYAlignment = Enum.TextYAlignment.Top
+
+corner.CornerRadius = UDim.new(0.100000001, 9)
+corner.Name = "corner"
+corner.Parent = real
+
+clear.Name = "clear"
+clear.Parent = main
+clear.BackgroundColor3 = Color3.fromRGB(72, 72, 72)
+clear.BorderColor3 = Color3.fromRGB(43, 153, 255)
+clear.Position = UDim2.new(0.244791672, 0, 0.868327379, 0)
+clear.Size = UDim2.new(0, 112, 0, 31)
+clear.Visible = false
+clear.Font = Enum.Font.SourceSans
+clear.Text = "CLEAR"
+clear.TextColor3 = Color3.fromRGB(255, 255, 255)
+clear.TextScaled = true
+clear.TextSize = 14.000
+clear.TextWrapped = true
+
+title2.Name = "title2"
+title2.Parent = main
+title2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+title2.BackgroundTransparency = 1.000
+title2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+title2.BorderSizePixel = 0
+title2.Position = UDim2.new(-3.93000054, 0, -3.13000011, 0)
+title2.Size = UDim2.new(0, 885, 0, 73)
+title2.Font = Enum.Font.Ubuntu
+title2.Text = "Blue Sky, Made by Nerdie"
+title2.TextColor3 = Color3.fromRGB(43, 153, 255)
+title2.TextScaled = true
+title2.TextSize = 14.000
+title2.TextWrapped = true
+
+status.Name = "status"
+status.Parent = main
+status.BackgroundColor3 = Color3.fromRGB(2, 255, 53)
+status.BackgroundTransparency = 1.000
+status.BorderColor3 = Color3.fromRGB(0, 0, 0)
+status.BorderSizePixel = 0
+status.Position = UDim2.new(0.303819448, 0, 0.153024912, 0)
+status.Size = UDim2.new(0, 222, 0, 10)
+status.Visible = false
+status.Font = Enum.Font.Ubuntu
+status.Text = "[status : not injected]"
+status.TextColor3 = Color3.fromRGB(255, 198, 28)
+status.TextSize = 16.000
+status.TextWrapped = true
+status.TextYAlignment = Enum.TextYAlignment.Bottom
+
+execute.Name = "execute"
+execute.Parent = main
+execute.BackgroundColor3 = Color3.fromRGB(72, 72, 72)
+execute.BorderColor3 = Color3.fromRGB(43, 153, 255)
+execute.Position = UDim2.new(0.03125, 0, 0.868327379, 0)
+execute.Size = UDim2.new(0, 112, 0, 31)
+execute.Visible = false
+execute.Font = Enum.Font.SourceSans
+execute.Text = "EXECUTE"
+execute.TextColor3 = Color3.fromRGB(255, 255, 255)
+execute.TextScaled = true
+execute.TextSize = 14.000
+execute.TextWrapped = true
+
+credits.Name = "credits"
+credits.Parent = main
+credits.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
+credits.BorderColor3 = Color3.fromRGB(0, 0, 0)
+credits.BorderSizePixel = 0
+credits.Position = UDim2.new(1.05729163, 0, 0, 0)
+credits.Size = UDim2.new(0, 272, 0, 281)
+credits.Visible = false
+
+creditsmain.Name = "creditsmain"
+creditsmain.Parent = credits
+creditsmain.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+creditsmain.BackgroundTransparency = 1.000
+creditsmain.BorderColor3 = Color3.fromRGB(0, 0, 0)
+creditsmain.BorderSizePixel = 0
+creditsmain.Position = UDim2.new(0.0294117648, 0, 0.54448396, 0)
+creditsmain.Size = UDim2.new(0, 253, 0, 40)
+creditsmain.Font = Enum.Font.FredokaOne
+creditsmain.Text = "UI Designer, Scripting, Tweening UI, Builder,.ect"
+creditsmain.TextColor3 = Color3.fromRGB(43, 153, 255)
+creditsmain.TextSize = 16.000
+creditsmain.TextWrapped = true
+creditsmain.TextXAlignment = Enum.TextXAlignment.Left
+creditsmain.TextYAlignment = Enum.TextYAlignment.Top
+
+ImageLabel.Parent = credits
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageLabel.BorderSizePixel = 0
+ImageLabel.Position = UDim2.new(0.0294117648, 0, 0.188612103, 0)
+ImageLabel.Size = UDim2.new(0, 100, 0, 87)
+ImageLabel.Image = "http://www.roblox.com/asset/?id=14530888407"
+
+UICorner.CornerRadius = UDim.new(10, 0)
+UICorner.Parent = ImageLabel
+
+name.Name = "name"
+name.Parent = credits
+name.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+name.BackgroundTransparency = 1.000
+name.BorderColor3 = Color3.fromRGB(0, 0, 0)
+name.BorderSizePixel = 0
+name.Position = UDim2.new(0.441176474, 0, 0.277580082, 0)
+name.Size = UDim2.new(0, 129, 0, 51)
+name.Font = Enum.Font.FredokaOne
+name.Text = "NERDIE"
+name.TextColor3 = Color3.fromRGB(255, 255, 255)
+name.TextScaled = true
+name.TextSize = 14.000
+name.TextWrapped = true
+name.TextYAlignment = Enum.TextYAlignment.Top
+
+idk.Name = "idk"
+idk.Parent = credits
+idk.BackgroundColor3 = Color3.fromRGB(43, 153, 255)
+idk.BackgroundTransparency = 1.000
+idk.BorderColor3 = Color3.fromRGB(0, 0, 0)
+idk.BorderSizePixel = 0
+idk.Size = UDim2.new(0, 233, 0, 43)
+idk.Font = Enum.Font.FredokaOne
+idk.Text = "CHEESY CREDITS"
+idk.TextColor3 = Color3.fromRGB(43, 153, 255)
+idk.TextScaled = true
+idk.TextSize = 14.000
+idk.TextWrapped = true
+idk.TextYAlignment = Enum.TextYAlignment.Top
+
+creditexit.Name = "creditexit"
+creditexit.Parent = credits
+creditexit.BackgroundColor3 = Color3.fromRGB(72, 72, 72)
+creditexit.BorderColor3 = Color3.fromRGB(43, 153, 255)
+creditexit.Position = UDim2.new(0.889195144, 0, 0, 0)
+creditexit.Size = UDim2.new(0, 30, 0, 31)
+creditexit.Font = Enum.Font.SourceSans
+creditexit.Text = "X"
+creditexit.TextColor3 = Color3.fromRGB(255, 255, 255)
+creditexit.TextScaled = true
+creditexit.TextSize = 14.000
+creditexit.TextWrapped = true
+
+codesign.Name = "code sign"
+codesign.Parent = main
+codesign.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+codesign.BackgroundTransparency = 1.000
+codesign.BorderColor3 = Color3.fromRGB(0, 0, 0)
+codesign.BorderSizePixel = 0
+codesign.Size = UDim2.new(0, 48, 0, 51)
+codesign.Image = "http://www.roblox.com/asset/?id=14539151735"
+
+attach.Name = "attach"
+attach.Parent = main
+attach.BackgroundColor3 = Color3.fromRGB(72, 72, 72)
+attach.BorderColor3 = Color3.fromRGB(43, 153, 255)
+attach.Position = UDim2.new(0.784722209, 0, 0.868327379, 0)
+attach.Size = UDim2.new(0, 112, 0, 31)
+attach.Visible = false
+attach.Font = Enum.Font.SourceSans
+attach.Text = "INJECT"
+attach.TextColor3 = Color3.fromRGB(255, 255, 255)
+attach.TextScaled = true
+attach.TextSize = 14.000
+attach.TextWrapped = true
+
+title.Name = "title"
+title.Parent = main
+title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+title.BackgroundTransparency = 1.000
+title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+title.BorderSizePixel = 0
+title.Position = UDim2.new(0.289930552, 0, 0, 0)
+title.Size = UDim2.new(0, 242, 0, 43)
+title.Visible = false
+title.Font = Enum.Font.Ubuntu
+title.Text = "Blue Sky"
+title.TextColor3 = Color3.fromRGB(43, 153, 255)
+title.TextScaled = true
+title.TextSize = 14.000
+title.TextWrapped = true
+
+-- Scripts:
+
+local function GIIMQE_fake_script() -- main.intro 
+	local script = Instance.new('LocalScript', main)
+
+	
+	local object = script.Parent
+	object.AnchorPoint = Vector2.new(0.5, 0.5)
+	object.Position = UDim2.new(0.5, 0, 0.5, 0)
+	
+	--When the game starts, it will wait 2 seconds, then make the tween.
+	wait(2)
+	object:TweenSize(UDim2.new(0, 576,0, 281), Enum.EasingDirection.Out, Enum.EasingStyle.Quint)
+end
+coroutine.wrap(GIIMQE_fake_script)()
+local function DOPZHZ_fake_script() -- main.drag._ 
+	local script = Instance.new('LocalScript', main)
+
+	local UserInputService = game:GetService("UserInputService")
+	
+	local gui = script.Parent
+	
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	
+	local function update(input)
+		local delta = input.Position - dragStart
+		gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+	end
+	
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+	
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	
+	UserInputService.InputChanged:Connect(function(input)
+		if input == dragInput and dragging then
+			update(input)
+		end
+	end)
+end
+coroutine.wrap(DOPZHZ_fake_script)()
+-- main.README_ is disabled.
+local function EVNDLDZ_fake_script() -- main.load 
+	local script = Instance.new('LocalScript', main)
+
+	
+	local r = script.Parent.real
+	local d = script.Parent.attach
+	local c = script.Parent.clear
+	local l = script.Parent.close
+	local e = script.Parent.execute
+	local s = script.Parent.status
+	local t = script.Parent.title_2
+	local o = script.Parent.title
+	local c3 = script.Parent.c3
+	
+	wait(3)
+	r.Visible = true
+	d.Visible = true
+	c.Visible = true
+	l.Visible = true
+	e.Visible = true
+	s.Visible = true
+	t.Visible = true
+	o.Visible = true
+	c3.Visible = true
+	
+	print("Loaded!")
+end
+coroutine.wrap(EVNDLDZ_fake_script)()
+local function QYUBKZ_fake_script() -- c3.CREDITS_ 
+	local script = Instance.new('LocalScript', c3)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.credits.Visible = true
+	end)
+end
+coroutine.wrap(QYUBKZ_fake_script)()
+local function HHGL_fake_script() -- close.close._ 
+	local script = Instance.new('LocalScript', close)
+
+	local r = script.Parent.Parent.real
+	local a = script.Parent.Parent.attach
+	local c = script.Parent.Parent.clear
+	local l = script.Parent.Parent.close
+	local e = script.Parent.Parent.execute
+	local s = script.Parent.Parent.status
+	local t = script.Parent.Parent.title
+	local t2 = script.Parent.Parent.title_2
+	local c3 = script.Parent.Parent.c3
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		r.Visible = false
+		a.Visible = false
+		c.Visible = false
+		l.Visible = false
+		e.Visible = false
+		s.Visible = false
+		t.Visible = false
+		t2.Visible = false
+		c3.Visible = false
+		local object = script.Parent.Parent
+		object.AnchorPoint = Vector2.new(0.5, 0.5)
+		object.Position = UDim2.new(0.5, 0, 0.5, 0)
+	
+		--When the game starts, it will wait 2 seconds, then make the tween.
+		object:TweenSize(UDim2.new(0, -3, 0, -3), Enum.EasingDirection.Out, Enum.EasingStyle.Quint)
+		wait(1)
+		script.Parent.Parent.Parent:Destroy()
+	end)
+end
+coroutine.wrap(HHGL_fake_script)()
+local function GHZWBR_fake_script() -- clear.CLEAR_ 
+	local script = Instance.new('LocalScript', clear)
+
+	local v = script.Parent.Parent.real.source
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		v.Text = ""
+	end)
+end
+coroutine.wrap(GHZWBR_fake_script)()
+local function BFNY_fake_script() -- title2.closeTime 
+	local script = Instance.new('LocalScript', title2)
+
+	wait(4)
+	script.Parent.Visible = false
+end
+coroutine.wrap(BFNY_fake_script)()
+local function TYKJT_fake_script() -- status.StatusTextColor_Setting 
+	local script = Instance.new('LocalScript', status)
+
+	if script.Parent.Text == "[status : not injected]" or "[haven't injected]" then
+		script.Parent.TextColor3 = Color3.new(255, 0, 0)
+	elseif script.Parent.Text == "[status : injected]" or "[already injected]" then
+		script.Parent.TextColor3 = Color3.new(2, 255, 53)
+	else
+		script.Parent.TextColor3 = Color3.new(255, 198, 28)
+	end
+	
+	
+end
+coroutine.wrap(TYKJT_fake_script)()
+local function ADWS_fake_script() -- execute.EXECUTE_ 
+	local script = Instance.new('LocalScript', execute)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		local v = script.Parent.Parent.real.source
+		local s = script.Parent.Parent.status
+		if injected == true then
+			loadstring(v.Text)()
+		elseif injected == false then
+			s.Text = "[haven't injected]"
+			wait(0.5)
+			s.Text = "[status : not injected]"
+		end
+	end)
+end
+coroutine.wrap(ADWS_fake_script)()
+local function WOWPVCO_fake_script() -- creditexit.close._ 
+	local script = Instance.new('LocalScript', creditexit)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Visible = false
+	end)
+end
+coroutine.wrap(WOWPVCO_fake_script)()
+local function IVHQY_fake_script() -- attach.ATTACH_ 
+	local script = Instance.new('LocalScript', attach)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		print("GG")
+		if injected == true then
+			script.Parent.Parent.status.Text = "[already inject]"
+			wait(1)
+			script.Parent.Parent.status.Text = "[status : injected]"
+		end
+		if injected == false then
+			script.Parent.Parent.status.Text = "[checking..]"
+			wait(0.1)
+			script.Parent.Parent.status.Text = "[programming..]"
+			wait(1.5)
+			script.Parent.Parent.status.Text = "[checking whitelist..]"
+			wait(0.8)
+			script.Parent.Parent.status.Text = "[scanning..]"
+			wait(0.3)
+			script.Parent.Parent.status.Text = "[injected!]"
+			wait(0.5)
+			script.Parent.Parent.status.Text = "[status : injected]"
+			injected = true
+		end
+	end)
+end
+coroutine.wrap(IVHQY_fake_script)()
